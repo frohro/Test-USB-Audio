@@ -19,14 +19,7 @@ void setup()
     i2s.setMCLKmult(384);
     i2s.setSysClk(8000);
     i2s.setBuffers(64, 16, 0);
-
     i2s.begin();
-
-    //  while(1) {
-    //    int32_t l, r;
-    //    i2s.read24(&l, &r);
-    //    Serial.printf("%d %d\r\n", l, r);
-    //}
 }
 
 void loop()
@@ -38,9 +31,6 @@ void loop()
     }
     for (i = 0; i < 500; i++)
     {
-        for (i = 0; i < 500; i++)
-        {
-            Serial.printf("> Right:%d, Left:%d\r\n", l[i] << 8, r[i] << 8);
-        }
+        Serial.printf("> Right:%d, Left:%d\r\n", l[i] << 8, r[i] << 8);
     }
 }
